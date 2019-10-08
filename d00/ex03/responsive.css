@@ -1,0 +1,75 @@
+td {
+	width: 5%;
+	height: 5%;
+	font: bold;
+	font-size: 1vw;
+	border: 1px solid black;
+	text-align: center;
+}
+
+img {
+	width:100%;
+	height:100%;	
+}
+
+#element {
+	color:black
+}
+#atomic {
+	text-align: left;
+	font: small;
+}
+
+#weight {
+	text-align: right;
+	color: black;
+	font: small;
+}
+
+.non-reg {
+	background-color: gray;
+}
+
+.diatomic-nonmetal {
+	background-color: plum;
+}
+
+.Alkali-Metal {
+	background-color:coral; 
+}
+
+.Alkaline-Earth-metal {
+	background-color: burlywood;
+}
+
+.Lanthanide {
+	background-color: greenyellow;
+}
+
+.Transition-Metal {
+	background-color: lime;
+}
+
+.Actinide {
+	background-color: chartreuse;
+}
+
+.Metalloid {
+	background-color: aqua;
+}
+
+.polometric-nonmetal {
+	background-color: darkmagenta;
+}
+.hidden {
+	border: none;
+}
+
+.post-Transition-metal {
+	background-color: beige;
+}
+
+.nobal-gas {
+	background-color: crimson;
+}
+

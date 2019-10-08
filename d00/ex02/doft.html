@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Day of the 42</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-		<link rel="stylesheet" type="text/css" href="doft.css"/>
-	</head>
-	<body>
-		<div class = "container">
-			<header class="box">
-				<img class = "img-head" src = "resources/day_of_the_42.png"/>
-				<a href = "http://www.disney.com" title = "Start from the beginning">
-					<img class = "img-reload" src = "resources/reload.png"/>
-				</a>
-				<a href = "http://www.relaischateaux.com" title = "Disconnect">
-					<img class = "img-close" src = "resources/close.gif"/>
-				</a>
-				<img class = "img-loupe" src = "resources/loupe.png"/>
-			</header>
-			<div class = "nav-pad">
-				<aside class = "col2">
-					<div class = "box">
-						<center>
-							<a href = "#" title = "Advance"><img class = "img-icon" src = "resources/arrow.png"/></a>
-							<a href = "#" title = "Take"><img class = "img-icon" src = "resources/main.png"/></a>
-							<a href = "#" title = "Look"><img class = "img-icon borders" src = "resources/oeil.png"/></a>
-							<a href = "#" title = "Use"><img class = "img-icon" src = "resources/outil.png"/></a>
-							<a href = "#" title = "Speak"><img class = "img-icon" src = "resources/chat-icon.png"/></a>
-						</center>
-					</div>
-				</aside>
-				<article class = "col8">
-					<div class = "box">
-						<img class = "img-full" src = "resources/cluster.jpg" usemap = "#map">
-						<map name = "map">
-							<area shape = "rect" coords = "300,300,400,450" title = "IKEA" href = "http://www.ikea.com">
-							<area shape = "rect" coords = "900,300,750,420" title = "APPLE" href = "http://www.apple.com">
-						</map>
-					</div>
-				</article>
-				<aside class = "col2">
-					<div class = "box col-right">
-						<center>
-						<a href = "#" title = "This is not an alarm"><img class = "img-icon" src = "resources/book.png"/></a>
-						<a href = "#" title = "Dont get yourself wet"><img class = "img-icon" src = "resources/towel.png"/></a>
-						<a href = "#" title = "Would you like a brick?"><div class = "img-bricks"></div></a>
-						</center>
-					</div>
-				</aside>
-			</div>
-			<div class = "window">
-				Vous <span class = "txt-big">entrez</span> alors dans une grande piéce remplie d'<span class = "txt-shadow">ordinateurs</span>...<br/>
-				<span class = "txt-italic">- Bonjour, vous êtes nouveau ici ?</span><br/>
-				<input type = "text" class = "input-text"/>
-				<button>Repondre</button>
-			</div>
-		</div>
-	</body>
-</html>
+<head>
+	<meta charset="utf-8">
+	<title>Day of the 42</title>
+	<link href="doft.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<!-- the head  -->
+		<div class = "header">
+			<img class = "head-img" src="resources/day_of_the_42.png"/>
+			<a href = "http://www.disney.com" title = "Start from the beginning">
+				<img class = "reload-img" src = "resources/reload.png"/>
+			</a>
+			<a href = "http://www.relaischateaux.com" title = "Disconnect">
+				<img class = "close-img" src = "resources/close.gif"/>
+			</a>
 
+			<img class = "loupe" src = "resources/loupe.png"/>
+		</div>
+
+		<div class = "layout">
+				<aside class = "col2">
+					<a href = "#" title = "Advance"><img class = "img-icon" src = "resources/arrow.png"/></a>
+					<a href = "#" title = "Take"><img class = "img-icon" src = "resources/main.png"/></a>
+					<a href = "#" title = "Look"><img class = "img-icon borders" src = "resources/oeil.png"/></a>
+					<a href = "#" title = "Use"><img class = "img-icon" src = "resources/outil.png"/></a>
+					<a href = "#" title = "Speak"><img class = "img-icon" src = "resources/chat-icon.png"/></a>
+				</aside>
+
+					
+					<article class = "col8">
+							<img class = "main-img" src = "resources/cluster.jpg" usemap = "#map">
+							<map name = "map">
+								<area shape = "rect" coords = "300,300,400,450" title = "IKEA" href = "http://www.ikea.com">
+								<area shape = "rect" coords = "900,300,750,420" title = "APPLE" href = "http://www.apple.com">
+							</map>
+					</article>
+				
+					<aside class = "col2">
+							<a href = "#"><img class = "img-icon" src = "resources/book.png"/></a>
+							<a href = "#"><img class = "img-icon" src = "resources/towel.png"/></a>
+							<a href = "#"><div class = "bricks"></div></a>
+					</aside>
+		</div>
+		
+		<form class="form">
+			Vous <span font-size="16px">entrez</span> alors dans une grande piéce remplie d'
+			<span style="text-shadow: -4px 4px 4px red;">ordinateurs</span>...<br/>
+			<i>- Bonjour, vous êtes nouveau ici ?</i></span><br/>
+			<input type = "text" class = "input-text"/>
+			<button>Repondre</button>
+		</form>
+	</div>
+</body>
+</html>
