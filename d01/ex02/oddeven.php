@@ -5,7 +5,7 @@
 		echo "Enter a number: ";
 		$input = rtrim(fgets(STDIN));
 
-		if (!$input)
+		if ($input == null)
 		{
 			echo "\n";
 			break ;

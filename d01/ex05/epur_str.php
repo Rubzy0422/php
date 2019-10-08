@@ -1,8 +1,7 @@
 #!/usr/bin/php
 <?php
-	unset($argv[0]);
-	if ($argc > 1) {
-		$stripped = trim($argv[1]);
-		echo $stripped . "\n";
-	}
+	if ($argc != 2)
+		exit();
+	$str = trim(preg_replace("/\s+/", " ", $argv[1]));
+	echo "$str\n";
 ?>
