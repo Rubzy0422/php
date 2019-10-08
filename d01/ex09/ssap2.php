@@ -9,9 +9,12 @@
 		$explode = explode(" ", $val);
 		$arr = array_merge($arr, $explode);
 	}
-	
-	sort($arr);
+	sort($arr, SORT_ALPHA | SORT_FLAG_CASE);
+	natcasesort($arr);
 	foreach ($arr as $item) {
 		echo $item . "\n";
 	}
+
+	// sort alpha then num rest in ascii
+
 ?>
