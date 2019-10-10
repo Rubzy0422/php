@@ -3,23 +3,27 @@
 		echo "ERROR\n";
 		exit();
 	}
+	$file = file_get_contents('./private/passwd');
 	if (!file_exists("private/")){
-		mkdir("./private/");
-		if (!file_exists("./private/passwd"))
-			file_put_contents("passwd", "");
+		mkdir("./private");
+		if (!file_exists("./private/passwd")){
+			file_put_contents("./private/passwd", "");
+		}
 	}
-	$data = serialize(array("login", "toto1", "passwd", "2345643654135473513654"));
+	// else {
+	// 	$users = unserialize(file_get_contents('../private/passwd'));
+	// 	if ($users){
+	// 		$exist = 0;
+	// 		foreach ($users as $user => $v){
+	// 			if ($v['login'] === $_POST['login'])
+	// 				$exist = 1;
+	// 			if ($exist){
+	// 				echo "ERROR\n";
+	// 				exit();
+	// 			}
+	// 		}
+	// 	}														SOMEONE FIX REUBENS CODE
+		$data = serialize(array("login", $_POST['login'], "passwd", hash("sha512", $_POST['passwd'])));
+		file_put_contents("./private/passwd", $file . $data . PHP_EOL);
+	}
 ?>
-
-<!-- DATA FORMAT
-a:1:
-{
-	i:0;
-	a:2:
-	{
-		s:5:"login";
-		s:5:"toto1";
-		s:6:"passwd";
-		s:128:"2bdd45b3c828273786937ac1b4ca7908a431019e8b93c9fd337317f92fac80dace29802bedc33d9259c8b55d1572cb8a6c1df8579cdaa02256099ed52a905d38";
-	}
-} -->
