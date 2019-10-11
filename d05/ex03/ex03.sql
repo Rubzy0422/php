@@ -1,3 +1,5 @@
+USE db_rcoetzer;
+
 INSERT INTO ft_table (login, creation_date, `group`)
 	SELECT last_name AS login, birthdate AS creation_date, 'other' AS `group`
 	FROM user_card

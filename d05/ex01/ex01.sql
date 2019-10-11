@@ -1,3 +1,5 @@
+USE db_rcoetzer;
+
 CREATE TABLE IF NOT EXISTS ft_table (
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`login` VARCHAR(8) NOT NULL DEFAULT 'toto',
