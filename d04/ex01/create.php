@@ -9,7 +9,7 @@
 			file_put_contents("./private/passwd", "");
 		}
 	}
-	else { //file exists get content
+	else {
 		$users = unserialize(file_get_contents('../private/passwd'));
 		if ($users) {
 			foreach ($users as $user => $tmp) {
