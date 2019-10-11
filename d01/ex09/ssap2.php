@@ -10,7 +10,7 @@
 	function comparatororor($a, $b)
 	{
 		$lp = 0;
-		$line = "abcdefghijklmnopqrstuvwxyz1234567890!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+		$line = "abcdefghijklmnopqrstuvwxyz0123456789!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 		while (($lp < strlen($a)) || ($lp < strlen($b)))
 		{
 			$lp_a = stripos($line, $a[$lp]);
