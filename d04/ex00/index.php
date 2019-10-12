@@ -8,8 +8,8 @@
 
 <html><body>
 <form action="index.php" method="get">
-	Username: <input type="text" name="login" value="sb" />
-	Password: <input type="password" name="passwd" value="beeone">
+	Username: <input type="text" name="login" value="" />
+	Password: <input type="password" name="passwd" value="">
 	<input type="submit" value="OK" name="submit">
 </form>
 </body></html>
