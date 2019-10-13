@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 }
 
 // Create database
-$sql = "CREATE DATABASE db_rush00";
+$sql = "CREATE DATABASE IF NOT EXISTS db_rush00";
 if ($conn->query($sql) === TRUE) {
 	echo "Database created successfully";
 } else {
@@ -24,7 +24,7 @@ if ($conn->query($sql) === TRUE) {
 	echo "Error connecting database: " . $conn->error;
 }
 
-$sql = "CREATE TABLE users(
+$sql = "CREATE TABLE IF NOT EXISTS users(
 	idUsers int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 	uidUsers TINYTEXT NOT NULL,
 	emailUsers TINYTEXT NOT NULL,
@@ -36,13 +36,13 @@ if ($conn->query($sql) === TRUE) {
 	echo "Error creating users table: " . $conn->error;
 }
 
-$sql = "CREATE TAbLE products(
-	id int(11) NOT NULL AUTO_INCREMENT,
-	name varchar(100) NOT NULL,
-	image varchar(100) NOT NULL,
-	price float NOT NULL,
-	PRIMARY KEY (id)
-);";
+$sql = "CREATE TABLE IF NOT EXISTS `tbl_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `price` double(10,2) NOT NULL,
+  PRIMARY KEY (`id`)
+)";
 if ($conn->query($sql) === TRUE) {
 	echo "Table products created successfully";
 } else {

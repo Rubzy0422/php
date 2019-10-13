@@ -3,8 +3,10 @@ Data management:
 
 User management:
 	create user (check)
-	delete user (untouched)
-	fill basket without login (require login on checkout) -- working on it --
+	delete user (check)
+	update user (check)
+	fill basket without login
+		(require login on checkout) -- working on it --
 
 Basket:
 	list of products
@@ -14,7 +16,7 @@ Basket:
 	- validation button (are you sure? )
 
 catogories:
-	catogorize products
+	catogorize products (needs to be built)
 
 landing page:
 	-attractive and intuitive
@@ -24,6 +26,6 @@ admin section:
 	(show orders from that users made)
 
 
-tabels: users
-		orders
-		products
+tabels: users, (check)
+		orders, (working on it)
+		products, (check)
