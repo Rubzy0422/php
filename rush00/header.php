@@ -17,9 +17,16 @@
 				<li><a href="index.php">Home</a></li>
 				<li><a href="shop.php">Shop</a></li>
 				<li><a href="about.php">About</a></li>
+				<li><a href="cart.php">cart</a></li>
+				<?php if (isset($_SESSION['userId'])) {
+					echo '<form action="update.php" method="POST">
+					<button type="submit" name="profile-submit">Profile</button>
+					</form>';
+				}
+				?>
 			</ul>
 			<div>
-			<?php if (isset($_SESSION['userId'])) {
+			<?php if (!isset($_SESSION['userId'])) {
 				echo '<form action="includes/login.inc.php" method="POST">
 					<input type="text" name="mailuid" placeholder="Username/ E-mail">
 					<input type="password" name="pwd" placeholder="Password">

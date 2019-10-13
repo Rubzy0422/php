@@ -5,14 +5,27 @@ require "header.php";
 	<main>
 		<div class="wrapper-main">
 			<section class="section-default">
-				<?php 
-					if (isset($_SESSION['userId'])) {
-							echo '<p> You are logged in!</p>';
-					}
-					else 
+				<?php
+				if (!isset($_GET["error"]))
+				{
+					if (isset($_GET['signup']))
 					{
-							echo '<p> You are logged out!</p>';
+						if ($_GET['signup'] == "success") {
+							echo '<p class="success">Signup successfull!</p>';
+						}
 					}
+					if (isset($_SESSION['userId'])) {
+						if ($_SESSION['userUid'] == "admin")
+						{
+							$_SESSION['ADMIN'] == true;
+							echo '<form action="admin.php" method="POST">
+								<button type="submit" name="admin-submit">Manage Server</button>
+							</form>';
+						}
+					}
+				} else
+					echo '<p>' . $_GET["error"] . '</p>';
+				require 'landing.php';
 				?>
 			</section>
 		</div>

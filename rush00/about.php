@@ -7,15 +7,14 @@ require "header.php";
 			<section class="section-default">
 				This is a simple shop design made by:
 				<ul>
-					<li>rcoetzer</li>
-					<li>xxx</li>
-					<li>xxx</li>
+					<li>Ruben Coetzer (rcoetzer)</li>
+					<li>Gilbert Fernandes (gfernand)</li>
 				</ul>
-				following the tutorials of: 
+				<!-- following the tutorials of: 
 				<ul>
 					<li><a href = "" >mmututs<a><p> for the login system</p></li>
 					<li><a href = "" >Clever Techie<a><p> for the cart system</p></li>
-				</ul>
+				</ul> -->
 			</section>
 		</div>
 	</main>

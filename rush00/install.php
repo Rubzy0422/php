@@ -1,21 +1,53 @@
 <?php
-// SQL
-CREATE BATABASE db_rush00;
 
-CREATE TABLE users(
+$servername = "localhost";
+$username = "root";
+$password = "password";
+
+$conn = new mysqli($servername, $username, $password);
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+
+// Create database
+$sql = "CREATE DATABASE db_rush00";
+if ($conn->query($sql) === TRUE) {
+	echo "Database created successfully";
+} else {
+	echo "Error creating database: " . $conn->error;
+}
+
+$sql = "USE db_rush00;";
+if ($conn->query($sql) === TRUE) {
+	echo "Database connected successfully";
+} else {
+	echo "Error connecting database: " . $conn->error;
+}
+
+$sql = "CREATE TABLE users(
 	idUsers int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 	uidUsers TINYTEXT NOT NULL,
 	emailUsers TINYTEXT NOT NULL,
 	pwdUsers LONGTEXT NOT NULL
-);
+);";
+if ($conn->query($sql) === TRUE) {
+	echo "Table users created successfully";
+} else {
+	echo "Error creating users table: " . $conn->error;
+}
 
-CREATE TAbLE products(
+$sql = "CREATE TAbLE products(
 	id int(11) NOT NULL AUTO_INCREMENT,
 	name varchar(100) NOT NULL,
 	image varchar(100) NOT NULL,
 	price float NOT NULL,
 	PRIMARY KEY (id)
-);
+);";
+if ($conn->query($sql) === TRUE) {
+	echo "Table products created successfully";
+} else {
+	echo "Error creating products table: " . $conn->error;
+}
 
-
+$conn->close();
 ?>

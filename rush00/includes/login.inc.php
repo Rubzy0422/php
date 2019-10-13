@@ -23,7 +23,7 @@
 				if ($row = mysqli_fetch_assoc($result)) {
 					$pwdCheck = password_verify($password, $row['pwdUsers']);
 					if ($pwdCheck == false) {
-						header("Location: ../index.php?error=wrongpwd");
+						header("Location: ../index.php?error=Invalid Credentials");
 						exit();
 					}
 					else if ($pwdCheck == true) {
@@ -35,12 +35,12 @@
 						exit();
 					}
 					else {
-						header("Location: ../index.php?error=wrongpwd");
+						header("Location: ../index.php?error=Invalid Credentials");
 						exit();
 					}
 				}
 				else {
-					header("Location: ../index.php?error=nouser");
+					header("Location: ../index.php?error=Invalid Credentials");
 					exit();
 				}
 			}
