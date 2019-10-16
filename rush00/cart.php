@@ -52,6 +52,7 @@ if (isset($_GET['error']))
 
 	<main>
 		<div class="wrapper-main">
+<<<<<<< HEAD
 		<?php
 		if (isset($_GET['checkout']))
 		{
@@ -120,6 +121,12 @@ if (isset($_GET['error']))
 				
 		</div>
 		</section>
+=======
+			<section class="section-default">
+				
+			</section>
+		</div>
+>>>>>>> 9acb5e5e2b26a8d4a2af19948562a0f4b29a41d4
 	</main>
 	
 <?php 
