@@ -21,19 +21,31 @@
 					else if ($_GET['error'] == "invalidmail") {
 						echo '<p class="error">Invalid email!</p>';
 					}
+					else if ($_GET['error'] == "emailtaken") {
+						echo '<p class="error">This E-mail is allready in use!</p>';
+					}
 					else if ($_GET['error'] == "passwordcheck") {
 						echo '<p class="error">Passwords do not match!</p>';
 					}
 					else if ($_GET['error'] == "usertaken") {
 						echo '<p class="error">Username is already taken!</p>';
 					}
-				} else if ($_GET['signup'] == "success") {
-					echo '<p class="success">Signup successfull!</p>';
 				}
 				?>
 				<form action="includes/signup.inc.php" method="post">
-					<input type="text" name="uid" placeholder="Username">
-					<input type="text" name="mail" placeholder="E-mail">
+					<input type="text" name="uid" placeholder="Username"  <?php 
+					if (isset($_GET['uid']))
+					{
+						echo 'value="' . $_GET['uid'].'"';
+					}
+					?>>
+
+					<input type="email" name="mail" placeholder="E-mail"  <?php 
+					if (isset($_GET['mail']))
+					{
+						echo 'value="' . $_GET['mail'].'"';
+					}
+					?>>
 					<input type= "password" name="pwd" placeholder="Password">
 					<input type="password" name="pwd-repeat" placeholder="Repeat password">
 					<button type="submit" name="signup-submit">Signup</button>

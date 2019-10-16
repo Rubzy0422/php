@@ -1,31 +1,34 @@
 <?php
-	if (isset($_POST['signup-submit']))
+
+
+	if (isset($_POST['admin-user-insert']))
 	{
-		require 'dbh.inc.php';
+		require '../../dbh.inc.php';
+		session_start();
 		$username = $_POST['uid'];
 		$email = $_POST['mail'];
 		$password = $_POST['pwd'];
 		$passwordRepeat = $_POST['pwd-repeat'];
 
 		if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
-			header("Location: ../signup.php?error=emptyfields&uid=" .$username ."&mail=".$email);
+			header("Location: ../../../admin.php?error=emptyfields&uid=" .$username ."&mail=".$email);
 			exit();
 		}
 		else if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username))
 		{
-			header("Location: ../signup.php?error=invalidmailuid");
+			header("Location: ../../../admin.php?error=invalidmailuid");
 			exit();
 		}
 		else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			header("Location: ../signup.php?error=invalidmail&uid=" .$username );
+			header("Location: ../../../admin.php?error=invalidmail&uid=" .$username );
 			exit();
 		}
 		else if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-			header("Location: ../signup.php?error=invaliduid&mail=" .$email);
+			header("Location: ../../../admin.php?error=invaliduid&mail=" .$email);
 			exit();
 		}
 		else if ($password !== $passwordRepeat) {
-			header("Location: ../signup.php?error=passwordcheck&uid=". $username. "&mail=" . $email);
+			header("Location: ../../../admin.php?error=passwordcheck&uid=". $username. "&mail=" . $email);
 			exit();
 		}
 		
@@ -33,7 +36,7 @@
 			$sql = "SELECT uidUsers FROM users WHERE uidUsers=?";
 			$stmt = mysqli_stmt_init($conn);
 			if (!mysqli_stmt_prepare($stmt, $sql)) {
-				header("Location: ../internal_error.php");
+				header("Location: ../../../internal_error.php");
 				exit();
 			}
 			else
@@ -44,7 +47,7 @@
 				$resultCheck = mysqli_stmt_num_rows($stmt);
 				if ($resultCheck > 0)
 				{
-					header("Location: ../signup.php?error=usertaken&mail=" . $email);
+					header("Location: ../../../admin.php?error=usertaken&mail=" . $email);
 					exit();
 				}
 				else
@@ -53,7 +56,7 @@
 					$stmt = mysqli_stmt_init($conn);
 					if (!mysqli_stmt_prepare($stmt, $sql))
 					{
-						header("Location: ../internal_error.php");
+						header("Location: ../../../internal_error.php");
 						exit();
 					}
 					else
@@ -64,7 +67,7 @@
 						$resultCheck = mysqli_stmt_num_rows($stmt);
 						if ($resultCheck > 0)
 						{
-							header("Location: ../signup.php?error=emailtaken&uid=" . $username);
+							header("Location: ../../../admin.php?error=emailtaken&uid=" . $username);
 							exit();
 						}
 						else
@@ -73,7 +76,7 @@
 							$stmt = mysqli_stmt_init($conn);
 							if (!mysqli_stmt_prepare($stmt, $sql))
 							{
-								header("Location ../internal_error.php");
+								header("Location ../../../internal_error.php");
 								exit();
 							}
 							else
@@ -81,7 +84,7 @@
 								$hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 								mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
 								mysqli_stmt_execute($stmt);
-								header("Location: ../index.php?signup=success");
+								header("Location: ../../../admin.php?success=Inserted user successfully");
 								exit();
 							}
 						}
@@ -93,6 +96,6 @@
 		mysqli_close($conn);
 	}
 	else {
-		header("Location: ../signup.php");
+		header("Location: ../../../admin.php");
 		exit();
 	}
