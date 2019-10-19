@@ -1,0 +1,35 @@
+Matrix: 
+	usage:
+		$Projection = new Matrix( array( 'preset' => Matrix::PROJECTION,
+						'fov' => 60,
+						'ratio' => 640/480,
+						'near' => 1.0,
+						'far' => -100.0 ) );
+
+
+	constant values for preset key:
+		IDENTITY	=	'IDENTITY',
+		SCALE		=	'SCALE',
+		RX			=	'Ox ROTATION',
+		RY			=	'Oy ROTATION',
+		RZ			=	'Oz ROTATION',
+		TRANSLATION	=	'TRANSLATION',
+		PROJECTION	=	'PROJECTION';
+
+		required fields for execution of preset:
+		IDENTITY	->	nothing
+		SCALE		->	the scale (float)			'scale'	=>	num;
+		RX			->	angle of rotation (float)	'angle'	=>	num
+		RY			->	angle of rotation (float)	'angle'	=>	num
+		RZ			->	angle of rotation (float)	'angle'	=>	num
+		TRANSLATION	->	vector of the translation	'vtc'	=>	VectorInstance
+		PROJECTION	->	Field of view				'fov'	=>	degrees
+						AspectRatio					'ratio'	=>	ratio (width/height)
+						near distance				'near'	=>	num
+						far distance				'far'	=>	num
+
+
+	Methods:
+		- mult() : return a new matrix corresponding to the multiplication of the instance by the argument
+
+		- transformVertex() : return a new Vertex corresponding to the matrix apply to the one sent in argument

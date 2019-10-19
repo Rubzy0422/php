@@ -1,0 +1,16 @@
+VERTEX:
+
+usage:
+	$vert = new Vertex( array( 'x' => x_val, 'y' => y_val, 'z' => z_val , 'w' => w_val), 'color' => Color_instance );
+	optional Fields:
+		w
+		color
+
+	all values can be set and retrieved using:
+	
+	set_(value)
+	get_(value)
+
+	ex:
+		set_x($var);
+		get_x();

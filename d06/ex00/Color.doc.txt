@@ -1,0 +1,14 @@
+COLOR:
+	useage:
+		Color( array( 'rgb' => hex_val ) );
+		Color( array( 'red' => red_val, 'green' => green_val, 'blue' => blue_val ) );
+
+	Methods:
+		Color add( Color $rhs );
+			Adds  color and returns a new Color instance.
+
+		Color sub( Color $rhs );
+			Substracts each color and returns a new Color instance.
+
+		Color mult( $f );
+			Multiplies each color by factor $f and returns a new Color instance.
